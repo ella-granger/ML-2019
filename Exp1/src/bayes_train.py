@@ -59,6 +59,8 @@ for folder in folders:
         text.close()
         num += 1
 
+print("size of spam_dict: %d, size of ham_dic: %d, totol words: %d" % (len(spam_dic), len(ham_dic), spam_word_num + ham_word_num))
+
 with open('./spam_dic', 'wb') as f:
     pickle.dump(spam_dic, f)
 
@@ -66,4 +68,4 @@ with open('./ham_dic', 'wb') as f:
     pickle.dump(ham_dic, f)
         
 with open('./statics', 'wb') as f:
-    pickle.dump((spam_num, ham_num, spam_word_num, ham_word_num), f)
+    pickle.dump((spam_num, ham_num, spam_word_num, ham_word_num, labels), f)
