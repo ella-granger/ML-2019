@@ -15,15 +15,6 @@ print("%d, %d, %d, %d, %d, %d" % (len(spam_dic), len(ham_dic), spam_num, ham_num
 data_cut_dir = "../trec06c-utf8/data_cut"
 
 
-def extract(fname):
-    text = open(fname)
-    line = text.readline()
-    while not line.split() == []:
-        line = text.readline()
-    body = text.read()
-    return body.split()
-
-
 def judge_spam(words):
     # P(h|x1, ..., xn) : P(x1|h) * ... * P(xn|h)P(h)
     # [x]: email, h: spam
